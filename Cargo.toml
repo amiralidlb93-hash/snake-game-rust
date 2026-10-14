@@ -1,8 +1,0 @@
-[package]
-name = "rust-snake"
-version = "0.1.0"
-edition = "2021"
-description = "A small terminal Snake game written in Rust"
-
-[dependencies]
-crossterm = "0.28.1"
