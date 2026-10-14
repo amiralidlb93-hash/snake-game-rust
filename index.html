@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1110">
+  <meta name="description" content="Play Snake in your browser. A Rust-powered arcade game compiled to WebAssembly.">
+  <title>Snake Game Rust — Play in your browser</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script src="./assets/game.js" defer></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Snake Game Rust home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>snake<span class="brand-accent">.rust</span></span>
+      </a>
+      <div class="topbar-right">
+        <span class="runtime-pill"><span class="pulse-dot"></span> RUST + WEBASSEMBLY</span>
+        <a class="source-link" href="https://github.com/amiralidlb93-hash/snake-game-rust" target="_blank" rel="noreferrer">Source code <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="eyebrow"><span class="eyebrow-line"></span> THE CLASSIC, REBUILT</p>
+        <h1>One more bite.<br><span>One more high score.</span></h1>
+        <p class="intro-copy">A tiny arcade classic with a Rust-powered game engine. No download, no account — just press play.</p>
+      </section>
+
+      <section class="play-layout" aria-label="Snake game">
+        <div class="game-panel">
+          <div class="game-toolbar">
+            <div class="live-label"><span class="live-dot"></span><span id="statusText">LOADING GAME ENGINE</span></div>
+            <div class="toolbar-stats">
+              <div class="mini-stat"><span>BEST</span><strong id="toolbarBest">00</strong></div>
+              <span class="toolbar-divider"></span>
+              <div class="mini-stat"><span>MODE</span><strong>ARCADE</strong></div>
+            </div>
+          </div>
+
+          <div class="board-wrap">
+            <canvas id="gameCanvas" width="600" height="400" aria-label="Snake game board"></canvas>
+            <div class="board-overlay" id="boardOverlay">
+              <div class="overlay-card">
+                <div class="overlay-icon" aria-hidden="true">↗</div>
+                <p class="overlay-kicker" id="overlayKicker">LOADING THE RUST ENGINE</p>
+                <h2 id="overlayTitle">Almost ready.</h2>
+                <p class="overlay-copy" id="overlayCopy">Getting the game board ready in your browser.</p>
+                <button class="button button-primary overlay-button" id="overlayButton" type="button">Start game <span aria-hidden="true">→</span></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="game-actions">
+            <button class="button button-primary" id="startButton" type="button">Start game <span aria-hidden="true">→</span></button>
+            <button class="button button-secondary" id="pauseButton" type="button" disabled>Pause <span aria-hidden="true">Ⅱ</span></button>
+            <button class="icon-button" id="restartButton" type="button" aria-label="Restart game" title="Restart game">↻</button>
+            <span class="action-spacer"></span>
+            <span class="key-hint"><kbd>SPACE</kbd> pause <span class="hint-separator">·</span> <kbd>R</kbd> restart</span>
+          </div>
+
+          <div class="touch-controls" aria-label="Touch controls">
+            <button type="button" data-direction="0" aria-label="Move up">↑</button>
+            <div class="touch-middle">
+              <button type="button" data-direction="3" aria-label="Move left">←</button>
+              <button type="button" data-direction="2" aria-label="Move down">↓</button>
+              <button type="button" data-direction="1" aria-label="Move right">→</button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="side-panel">
+          <div class="score-card">
+            <p class="card-label">CURRENT SCORE</p>
+            <div class="score-number" id="scoreValue">00</div>
+            <div class="score-rule"><span></span></div>
+            <div class="best-row"><span>Personal best</span><strong id="bestValue">00</strong></div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-heading"><span class="info-icon">⌘</span><h2>How to play</h2></div>
+            <ul class="howto-list">
+              <li><span class="list-number">01</span><span>Use <b>arrow keys</b> or <b>W A S D</b> to steer.</span></li>
+              <li><span class="list-number">02</span><span>Eat glowing fruit to grow and score.</span></li>
+              <li><span class="list-number">03</span><span>Don't hit a wall or your own tail.</span></li>
+            </ul>
+            <div class="side-shortcuts"><span><kbd>SPACE</kbd> Pause</span><span><kbd>R</kbd> Restart</span></div>
+          </div>
+
+          <div class="engine-card">
+            <span class="engine-symbol" aria-hidden="true">⚙</span>
+            <div><strong>Rust at the core.</strong><p>Game logic compiled to WebAssembly. Runs right here in your browser.</p></div>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="footer">
+        <span>MADE FOR ONE MORE ROUND</span>
+        <span class="footer-center"><i></i> No downloads. No account. Just Snake.</span>
+        <a href="https://github.com/amiralidlb93-hash/snake-game-rust" target="_blank" rel="noreferrer">Open source on GitHub ↗</a>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

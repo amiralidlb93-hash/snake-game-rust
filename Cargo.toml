@@ -1,0 +1,13 @@
+[package]
+name = "rust-snake"
+version = "0.1.0"
+edition = "2021"
+description = "Rust terminal Snake game with a WebAssembly browser edition"
+license = "MIT"
+
+[[bin]]
+name = "rust-snake"
+path = "main.rs"
+
+[dependencies]
+crossterm = "0.28.1"
